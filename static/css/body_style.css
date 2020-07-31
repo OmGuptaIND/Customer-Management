@@ -1,0 +1,28 @@
+body{
+
+    background-color: #ebeff5;
+}
+#total-order{
+    background-color:#4cb4c7;
+}
+#orders-delivered{
+    background-color:#7abecc;
+}
+#orders-pending{
+    background-color:#7CD1C0;
+}
+.hr-primary{
+  width: 60%;
+}
+.website-contents{
+
+  border-top: 50px;
+}
+#products_card{
+  background-color: #7CD1C0;
+  margin-top: 20px;
+  align-content: center;
+}
+#product_table_head{
+  background-color: black;
+}

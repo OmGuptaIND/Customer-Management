@@ -1,0 +1,10 @@
+{% extends 'accounts/base.html' %}
+{% load static %}
+{% block content %}
+  <form class="" action="" method="POST">
+    {% csrf_token %}
+    {{forms}}
+    <input class="btn btn-outline-info" type="submit" name="sub" value="Submit">
+  </form>
+
+{% endblock %}

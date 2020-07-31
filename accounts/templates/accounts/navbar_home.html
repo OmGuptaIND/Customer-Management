@@ -1,0 +1,51 @@
+{% load static %}
+<style>
+ #login-page{
+    align:right;
+    margin-left:900px;
+ }
+ #log_out{
+   color:green;
+ }
+
+</style>
+
+
+
+
+<div class="my_nav">
+  <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="{% url 'home_page' %}"><img src="{% static 'images/Group 3.png' %}" alt="Error404"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="{% url 'home_page' %}">Home</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="{% url 'about' %}">About Us</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="{% url 'register' %}">Register</a>
+        </li>
+        <li class="nav-item dropdown active">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            EXTRAS
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Profile</a>
+            <a class="dropdown-item" href="{% url 'admin:index' %}">Admin</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Coming Soon...</a>
+          </div>
+        </li>
+        <li id='login-page' class="nav-item active">
+          <a  class="nav-link" href="{% url 'login' %}">Login</a>
+        </li>
+      </ul>
+    </div>
+    </nav>
+</div>

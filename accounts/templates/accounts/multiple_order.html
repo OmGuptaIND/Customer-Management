@@ -1,0 +1,29 @@
+{% extends 'accounts/base.html' %}
+{% load static %}
+{% block content %}
+<style>
+  input{
+    align:center;
+
+  }
+</style>
+<br>
+<div class="container">
+
+<div class="card card-body">
+
+<h5 class="card card-header">Customer Name: {{cust.name}} </h5>
+<hr>
+
+  <form class="" action="" method="post">
+    {% csrf_token %}
+    {{ formset.management_form }}
+    {% for forms in formset %}
+      {{forms}}
+      <hr>
+    {% endfor %}
+    <input class="btn btn-info text-align:center text-color:yellow" type="submit" name="submit" value="Place Order">
+  </form>
+  </div>
+</div>
+{% endblock %}

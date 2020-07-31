@@ -1,0 +1,61 @@
+{% load static %}
+<style>
+ .hello-base{
+   font-size:18px;
+   color:#fff;
+   margin-right:20px;
+   font-style:italic;
+ }
+ #log_out{
+   color:green;
+ }
+
+</style>
+
+
+
+
+<div class="my_nav">
+  <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="{% url 'home_page' %}"><img src="{% static 'images/Group 3.png' %}" alt="Error404"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        {% if request.user.is_staff %}
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'home_page' %}">Home</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'accounts:dash' %}">DashBoard</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'accounts:products' %}">Products</a>
+          </li>
+
+        <li class="nav-item active">
+          <a class="nav-link" href="{% url 'accounts:products' %}">Contacts</a>
+        </li>
+        {% endif %}
+        <li class="nav-item dropdown active">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            EXTRAS
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            {% if request.user.is_staff %}
+              <a class="dropdown-item" href="{% url 'admin:index' %}">Admin</a>
+            {% else %}
+              <a class="dropdown-item" href="{% url 'accounts:profile_user' %}">Profile</a>
+            {% endif %}
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Coming Soon...</a>
+          </div>
+        </li>
+      </ul>
+      <span class="hello-base">Hello, {{request.user}} </span>
+      <span class="hello-base"><a id='log_out' class='nav-link' href="{% url 'logout' %}">Logout</a></span>
+    </div>
+  </nav>
+</div>

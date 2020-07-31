@@ -1,0 +1,29 @@
+{% extends 'accounts/base.html' %}
+{% load static %}
+{% block content %}
+<div class="shadow p-3 mb-5 bg-white rounded">
+  <div class="container">
+    <div class="card text-black">
+      <div class="card-header">
+        <h5 class="card-title">Delete Item</h5>
+      </div>
+    <div class="card-body">
+      <p>Are You Sure About <b><i>Deleting</i></b> this Customer?</p>
+      <p>Customer Details as follows:</p>
+      <p><b>Customer Name: </b>{{item.name}}</p>
+      <p><b>Phone No.: </b>{{item.phone}}</p>
+      <p><b>Email: </b>{{item.email}}</p>
+      <form class="" action="{% url 'accounts:delete_customer' item.id %}" method="POST">
+          {% csrf_token %}
+          <input class="btn btn-outline-danger" type="submit" name="sub" value="Remove">
+          <a class="btn btn-outline-info" href="{% url 'accounts:dash' %}">Cancel</a>
+
+      </form>
+
+    </div>
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}

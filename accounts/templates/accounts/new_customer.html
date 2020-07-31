@@ -1,0 +1,10 @@
+{% extends 'accounts/base.html' %}
+{% load static %}
+{% block content %}
+  <form class="" action="" method="POST">
+    {% csrf_token %}
+    {{forms}}
+    <input type="submit" name="submit" value="Create">
+    <a class="btn btn-outline-danger" href="{% url 'accounts:dash' %}">Cancel</a>
+  </form>
+{% endblock %}
